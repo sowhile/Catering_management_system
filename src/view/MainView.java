@@ -27,12 +27,15 @@ public class MainView {
                 case '1':
                     System.out.print("请输入用户名:");
                     String user = InputUtility.readString(64);
+                    //这里可以查一次数据库判断用户名是否存在
                     System.out.print("请输入密  码:");
                     String passwd = InputUtility.readString(128);
-                    //数据库判断
-                    if (!passwd.equals("123")) System.out.println("fail");
+                    //数据库验证用户名和密码
+                    if (!passwd.equals("123"))
+                        //登录失败
+                        System.out.println("登录失败");
                     else {
-                        System.out.println("登录成功.");
+                        System.out.println("\t\t *登录成功|欢迎使用|GL&HF*");
                         //二级菜单
                         while (loop2) {
                             System.out.println("==================满汉楼==================");
