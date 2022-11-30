@@ -12,10 +12,8 @@ import java.sql.Statement;
 import java.util.Properties;
 
 /**
- * @author sowhile
- * @version 1.0
- * <p>
- * 2022/11/30 15:06
+ * 使用Druid连接池的JDBC连接数据库工具类，提供：
+ * getConnection()和 close方法
  */
 public class JDBCDruidUtils {
     public static Properties properties;

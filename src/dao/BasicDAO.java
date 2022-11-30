@@ -11,10 +11,10 @@ import java.sql.SQLException;
 import java.util.List;
 
 /**
- * @author sowhile
- * @version 1.0
- * <p>
- * 2022/11/30 17:06
+ * 提供最基本的操作数据库的方法
+ * 其它DAO继承该类
+ *
+ * @param <T> 传入具体的 Domain类
  */
 public class BasicDAO<T> {
     //Apache
