@@ -67,7 +67,21 @@ public class InputUtility {
                 n = Integer.parseInt(str);//将字符串转换成整数
                 break;
             } catch (NumberFormatException e) {
-                System.out.print("数字输入错误，请重新输入：");
+                System.out.print("数字输入错误，请重新输入:");
+            }
+        }
+        return n;
+    }
+
+    public static short readShort() {
+        short n;
+        for (; ; ) {
+            String str = readKeyBoard(2, false);//一个整数，长度<=2位
+            try {
+                n = Short.parseShort(str);//将字符串转换成整数
+                break;
+            } catch (NumberFormatException e) {
+                System.out.print("数字输入错误，请重新输入:");
             }
         }
         return n;
@@ -153,7 +167,7 @@ public class InputUtility {
      *                    如果输入为空，或者输入大于limit的长度，就会提示重新输入。
      * @return
      */
-    private static String readKeyBoard(int limit, boolean blankReturn) {
+    public static String readKeyBoard(int limit, boolean blankReturn) {
 
         //定义了字符串
         String line = "";
