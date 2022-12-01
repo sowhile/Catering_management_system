@@ -1,12 +1,9 @@
 package view;
 
-import domain.Bill;
 import domain.DiningTable;
 import domain.Menu;
-import service.BillService;
-import service.DiningTableService;
-import service.EmpService;
-import service.MenuService;
+import domain.MultiTableBean;
+import service.*;
 import utils.BCrypt;
 import utils.InputUtility;
 
@@ -29,6 +26,7 @@ public class MainView {
     private DiningTableService diningTableService = new DiningTableService();
     private MenuService menuService = new MenuService();
     private BillService billService = new BillService();
+    private MultiTableService multiTableService = new MultiTableService();
 
     public void mainMenu() {
         while (mainLoop) {
@@ -203,12 +201,13 @@ public class MainView {
     }
 
     private void showBills() {
-        List<Bill> billList = billService.getBillList();
+//        List<Bill> billList = billService.getBillList();
+        List<MultiTableBean> billListUnion = multiTableService.getBillListUnion();
         waitATime();
         System.out.println("===================================所有账单===================================");
-        System.out.println("编号\t\t菜品号\t数量\t\t金额\t\t\t桌号\t\t日期\t\t\t\t\t\t\t状态");
-        for (Bill bill : billList)
-            System.out.println(bill);
+        System.out.println("编号\t\t菜品号\t菜品名称\t\t单价\t\t\t数量\t\t金额\t\t\t桌号\t\t日期\t\t\t\t\t\t\t状态");
+        for (MultiTableBean multiTableBean : billListUnion)
+            System.out.println(multiTableBean);
         InputUtility.readKeyBoard(100, true);
     }
 
