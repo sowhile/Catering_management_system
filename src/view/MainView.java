@@ -21,7 +21,6 @@ public class MainView {
     }
 
     private boolean mainLoop = true;
-    private boolean loop2 = true;
     private EmpService empService = new EmpService();
     private DiningTableService diningTableService = new DiningTableService();
     private MenuService menuService = new MenuService();
@@ -54,7 +53,7 @@ public class MainView {
                         System.out.println("密码错误!");
                     else {
                         System.out.println("\t\t *登录成功|欢迎," + user + "|GL&HF*");
-                        loop2 = true;
+                        boolean loop2 = true;
                         //二级菜单
                         while (loop2) {
                             System.out.println("==================满汉楼==================");
